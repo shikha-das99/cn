@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ink-500/60;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-900 text-ivory antialiased;
+  }
+  ::selection {
+    @apply bg-sage/30 text-ivory;
+  }
+  :focus-visible {
+    outline: 2px solid #8fae96;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .tracking-widest2 {
+    letter-spacing: 0.28em;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-xl border border-ink-500 bg-ink-800/60 px-4 py-3 text-sm text-ivory placeholder:text-ink-300 outline-none transition-colors focus:border-sage;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
